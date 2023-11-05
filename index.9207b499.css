@@ -1,0 +1,466 @@
+@import "https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Permanent+Marker&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Almarai&family=Fuzzy+Bubbles:wght@400;700&display=swap";
+.badge {
+  border-radius: 50%;
+}
+
+.size-sm {
+  transform-origin: center;
+  transform: scale(.7);
+}
+
+.tooltip.show {
+  opacity: .97 !important;
+}
+
+.register-form {
+  min-height: 100vh;
+}
+
+.TaskInput {
+  box-sizing: unset;
+  max-width: 730px;
+  max-height: 50px;
+  opacity: 0;
+  align-items: center;
+  gap: 5px;
+  margin: auto;
+  padding: 10px;
+  transition: opacity .25s ease-in-out;
+  display: flex;
+}
+
+.TaskInput.showing {
+  opacity: 1;
+}
+
+.TaskInput > * {
+  flex-basis: 0;
+}
+
+.TaskInput button {
+  max-width: 87px;
+  flex-grow: 2;
+}
+
+.TaskInput .select {
+  height: 100%;
+  flex-grow: 3;
+  position: relative !important;
+}
+
+.TaskInput .select > select {
+  width: 100%;
+  color: #fff;
+}
+
+.TaskInput input {
+  flex-grow: 16;
+  padding: 5px;
+}
+
+.TaskInputSelect:before {
+  content: "";
+  text-align: center;
+  pointer-events: none;
+  z-index: 10;
+  border: 2px solid #000;
+  border-radius: .375rem;
+  padding: .25em 0;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.TaskInputSelect.wajib:before {
+  content: "واجب";
+  background-color: #198754;
+}
+
+.TaskInputSelect.mousta7ab:before {
+  content: "مستحب";
+  color: #025102;
+  background-color: #fff;
+}
+
+.TaskInputSelect.mamnou3:before {
+  content: "ممنوع";
+  background-color: #bb2d3b;
+}
+
+.AddTask {
+  max-width: 730px;
+}
+
+#register, #addDayBtn {
+  color: #fff;
+  width: 100%;
+  background: linear-gradient(-16deg, #90f9c4 0%, #0fb080 50%);
+  flex-grow: 10;
+  flex-basis: auto;
+  margin: 0 10px;
+}
+
+#register:hover, #addDayBtn:hover {
+  background: linear-gradient(-16deg, #77cfa3 0%, #0b7b59 80%);
+}
+
+@media (min-width: 720px) {
+  #inputNameGroup {
+    max-width: 600px;
+    width: 75% !important;
+  }
+}
+
+#nav, .footer {
+  gap: 10px;
+  font-family: Permanent Marker, Amiri Quran, serif;
+  position: relative;
+}
+
+#gc-pfp {
+  min-width: 80px;
+  min-height: 80px;
+  aspect-ratio: 1 / 1;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+
+#gc-pfp.gc1 {
+  background-image: url("gc1.b7bb2951.jpg");
+}
+
+#gc-pfp.gc2 {
+  background-image: url("gc2.307ecf91.png");
+}
+
+#gc-pfp.gc3 {
+  background-image: url("gc3.e806e931.jpg");
+}
+
+#gc-pfp.gc4 {
+  background-image: url("gc4.6dc5582f.jpg");
+}
+
+.daysLeft {
+  z-index: 100;
+  background-color: #000;
+  border: 4px solid #fff;
+  padding: .125em .8em;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#main {
+  min-height: 500px;
+  background: linear-gradient(120deg, #6511a6 0%, #8c16e6 100%);
+}
+
+#addDayBtn {
+  max-width: 420px;
+  margin: auto;
+  display: block;
+}
+
+#addDayModal .all {
+  color: #fff;
+  background-color: var(--primary);
+}
+
+.score {
+  font-family: sans-serif;
+}
+
+.score-bar {
+  --basic: 0;
+  --bonus: 0;
+  --duration: .7s;
+  width: 60%;
+  max-width: 220px;
+  min-width: 134px;
+  height: 2em;
+  max-height: 50px;
+  border: 2px solid #000;
+  border-radius: 0 .375rem .375rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.score-bar .score-bar-basic, .score-bar .score-bar-bonus {
+  height: 100%;
+  transition: all var(--duration) ease-out;
+}
+
+.score-bar .score-bar-basic {
+  width: var(--basic);
+  background-color: var(--green);
+}
+
+.score-bar .score-bar-bonus {
+  background-color: var(--gold);
+  width: var(--bonus);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.score-percent {
+  transition: color .45s ease-in-out;
+}
+
+.score-percent.white {
+  color: #fff !important;
+}
+
+.score-percent.basic-score-percent {
+  color: var(--green);
+}
+
+.score-percent.bonus-score-percent {
+  color: var(--gold);
+}
+
+.last-time {
+  color: #fff;
+  text-align: right;
+  width: 100%;
+  max-width: 420px;
+  background-color: #00000049;
+  margin: auto;
+  padding: .4em 1em;
+}
+
+.static-wajib-tasks, .static-mamnou3-tasks, .static-mousta7ab-tasks {
+  text-align: right;
+}
+
+.static-wajib-tasks input, .static-mamnou3-tasks input, .static-mousta7ab-tasks input {
+  aspect-ratio: 1 / 1;
+  width: 20px;
+  height: 20px;
+}
+
+.static-wajib-tasks {
+  background-color: #b8f7b8;
+}
+
+.static-mamnou3-tasks {
+  background-color: #ff9d9d;
+}
+
+.static-mousta7ab-tasks {
+  background-color: #fff3a6;
+}
+
+.array-scroller {
+  border-radius: 20px 20px 0 0;
+  flex-wrap: wrap;
+  justify-content: center;
+  display: flex;
+}
+
+.array-scroller button {
+  height: min-content;
+  border-left: 2px solid #fff;
+  padding: .2em 1em;
+  border-radius: 0 !important;
+}
+
+.array-scroller button:hover {
+  opacity: .8;
+  border-left: 2px solid #fff;
+}
+
+.array-scroller button:nth-last-of-type(1) {
+  border-right: 2px solid #fff;
+}
+
+.all-days-grid {
+  --color: red;
+  border-radius: 0 0 20px 20px;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 250px));
+  justify-content: center;
+  display: grid;
+  position: relative;
+}
+
+.last-day.card {
+  animation: .3s ease-in-out load;
+}
+
+.single-day {
+  --border-width: 4px;
+  border: var(--border-width) solid white;
+  border-right-width: calc(var(--border-width) / 2);
+  border-left-width: calc(var(--border-width) / 2);
+  cursor: pointer;
+  background: linear-gradient(175deg, #000 0%, #9d9d9d 65%);
+  border-radius: 1em;
+  padding: .5em;
+  position: relative;
+}
+
+.single-day:hover {
+  opacity: .85;
+}
+
+.date-and-id {
+  color: #fff;
+  justify-content: space-between;
+  display: flex;
+}
+
+.date-and-id .day-id {
+  color: #000;
+  width: 1.7em;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 0 0 10px 10px;
+  padding: .125em .5em;
+}
+
+.score-bar {
+  border-width: 2px;
+  margin: 10px auto;
+}
+
+.auto-selector input:checked {
+  background-color: gray;
+}
+
+.daily-task:first-of-type {
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+}
+
+.daily-task {
+  cursor: pointer;
+  background-color: #333030;
+  border-top: 2px solid #000;
+  padding-top: .35em;
+  padding-bottom: .35em;
+  padding-right: .5em;
+}
+
+.daily-task input:checked {
+  background-color: var(--color);
+}
+
+.daily-task * {
+  cursor: pointer;
+}
+
+.wajib-task, .mamnou3-task {
+  --color: var(--green);
+}
+
+.mousta7ab-task {
+  --color: var(--dark-gold);
+}
+
+.wajib-task:first-of-type {
+  border-width: 15px;
+  border-top-color: var(--green);
+}
+
+@media (max-width: 410px) {
+  .all-days-grid {
+    gap: .5em;
+  }
+
+  .single-day {
+    border-right-width: unset;
+    border-left-width: unset;
+    border-radius: .735em;
+  }
+}
+
+:root {
+  --primary: #8c16e6;
+  --primary-dark: #6511a6;
+  --secondary: #e49102;
+  --secondary-light: #d1e617;
+  --gold: #ffdf00;
+  --dark-gold: #f4d400;
+  --green: #0ec80e;
+  --dark-green: #0c9c0c;
+}
+
+body {
+  font-family: Almarai, sans-serif;
+}
+
+.no-ff {
+  font-family: sans-serif, serif;
+}
+
+.f-basis-100 {
+  flex-basis: 100%;
+}
+
+.epic-text {
+  font-family: Permanent Marker, Amiri Quran, serif;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.bg-primary {
+  background-color: var(--primary) !important;
+}
+
+.bg-primary-bs {
+  background-color: #0d6efd;
+}
+
+.bg-primary-dark {
+  background-color: var(--primary-dark) !important;
+}
+
+.secondary {
+  color: var(--secondary) !important;
+  border: 3px solid var(--secondary) !important;
+  background-color: #f6ffa3 !important;
+}
+
+.text-secondary {
+  color: var(--secondary) !important;
+}
+
+.border-secondary {
+  border: 2px solid var(--secondary) !important;
+}
+
+.bg-secondary-light {
+  background-color: #d1e617;
+}
+
+.flex-gap {
+  gap: 10px;
+}
+
+.size-sm {
+  transform-origin: center;
+  transform: scale(.7);
+}
+
+@keyframes load {
+  0% {
+    transform: scale(0);
+  }
+
+  80% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/*# sourceMappingURL=index.9207b499.css.map */
